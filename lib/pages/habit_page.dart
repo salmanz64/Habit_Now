@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:habit_now/components/habit_details.dart';
 import 'package:habit_now/database/habit_data.dart';

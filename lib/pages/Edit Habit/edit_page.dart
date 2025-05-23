@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habit_now/database/habit_data.dart';
 import 'package:habit_now/models/habit.dart';
-import 'package:habit_now/pages/Add%20Habit/habit_detail_page.dart';
 import 'package:habit_now/utils/categories.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +18,6 @@ class _EditPageState extends State<EditPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     ed = TextEditingController(text: widget.hb!.title);
     super.initState();
   }

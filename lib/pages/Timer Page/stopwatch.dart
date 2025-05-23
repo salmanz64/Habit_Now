@@ -12,7 +12,6 @@ class MyStopwatch extends StatefulWidget {
 class _StopwatchState extends State<MyStopwatch> {
   @override
   void dispose() {
-    // TODO: implement dispose
     widget.stp.dispose();
     super.dispose();
   }

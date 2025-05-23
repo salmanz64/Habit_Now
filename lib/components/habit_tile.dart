@@ -1,9 +1,9 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:habit_now/database/habit_data.dart';
-import 'package:habit_now/models/habit.dart';
 import 'package:habit_now/models/habitStatus.dart';
 import 'package:habit_now/utils/categories.dart';
-import 'package:icons_plus/icons_plus.dart';
 import 'package:provider/provider.dart';
 
 class HabitTile extends StatefulWidget {
@@ -92,11 +92,11 @@ class _HabitTileState extends State<HabitTile> {
           child: Container(
             width: width * 0.09,
             height: height * 0.09,
-            child: isDone_Icon[widget.hbs.isDone],
             decoration: BoxDecoration(
               color: Colors.white12,
               shape: BoxShape.circle,
             ),
+            child: isDone_Icon[widget.hbs.isDone],
           ),
         ),
       ),

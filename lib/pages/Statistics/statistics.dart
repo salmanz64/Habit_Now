@@ -1,4 +1,5 @@
-import 'package:fl_chart/fl_chart.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:habit_now/database/habit_data.dart';
 import 'package:habit_now/models/habit.dart';

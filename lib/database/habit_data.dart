@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:habit_now/database/hive_database.dart';
 import 'package:habit_now/models/daySummary.dart';
@@ -53,7 +51,6 @@ class HabitData extends ChangeNotifier {
     overallHabits.removeWhere((element) => element.title == name);
     doSomeDaySummary();
     if (hb.notfid != null) {
-      print(hb.notfid!);
       ShowLocalNotification().removeTheHabitsNotification(hb.notfid!);
     }
 
@@ -178,7 +175,7 @@ class HabitData extends ChangeNotifier {
   }
 
   void updateStatus(String date, String name) {
-    overallDaySummary.forEach((element) {
+    for (var element in overallDaySummary) {
       if (element.date == date) {
         HabitStatus changeElement = element.habits.firstWhere(
           (habit) => habit.hb.title == name,
@@ -186,7 +183,7 @@ class HabitData extends ChangeNotifier {
 
         changeElement.isDone = (changeElement.isDone + 1) % 3;
       }
-    });
+    }
     db.addDaySummaryToHive(overallDaySummary);
     notifyListeners();
   }
