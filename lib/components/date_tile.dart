@@ -28,7 +28,7 @@ class DateTile extends StatelessWidget {
       3: Colors.yellow,
     };
     return Padding(
-      padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+      padding: const EdgeInsets.fromLTRB(10, 10, 5, 0),
       child: Container(
         width: width,
         height: height,

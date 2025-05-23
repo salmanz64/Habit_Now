@@ -32,7 +32,7 @@ class HabitDetails extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: height * 0.22,
+        height: height * 0.256,
         width: width - 20,
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey, width: 0.2),
@@ -55,7 +55,7 @@ class HabitDetails extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                        height: width * 0.1,
+                        height: height * 0.05,
                         width: width * 0.01,
                         child: Container(
                           decoration: BoxDecoration(
@@ -112,7 +112,7 @@ class HabitDetails extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: height * 0.08,
+                height: height * 0.09,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 7,

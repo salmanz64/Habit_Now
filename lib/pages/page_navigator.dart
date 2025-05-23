@@ -180,9 +180,13 @@ class _PageNavigatorState extends State<PageNavigator> {
                                         isSearching = !isSearching;
                                       }),
                                     },
-                                child: Icon(
-                                  Icons.search,
-                                  color: Theme.of(context).colorScheme.primary,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Icon(
+                                    Icons.search,
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                  ),
                                 ),
                               ),
                             ]
