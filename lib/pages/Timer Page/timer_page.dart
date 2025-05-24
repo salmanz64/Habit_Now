@@ -96,7 +96,7 @@ class _TimerPageState extends State<TimerPage> {
             minHeight: 75,
             minWidth: double.infinity,
             activeBgColor: [Colors.blue],
-            inactiveBgColor: Colors.black,
+            inactiveBgColor: Theme.of(context).colorScheme.surface,
             borderWidth: 1,
             animate: true,
             animationDuration: 500,

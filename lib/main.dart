@@ -32,9 +32,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      darkTheme: darkMode,
 
-      theme: Provider.of<Themeprovider>(context).themeData,
+      theme:
+          Provider.of<Themeprovider>(context).themeData == darkMode
+              ? darkMode
+              : lightmode,
 
       home: PageNavigator(),
     );

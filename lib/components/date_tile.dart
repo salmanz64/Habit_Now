@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:habit_now/themes/themeProvider.dart';
+import 'package:provider/provider.dart';
 
 class DateTile extends StatelessWidget {
   int? status;
@@ -27,57 +29,65 @@ class DateTile extends StatelessWidget {
       2: const Color.fromARGB(255, 205, 27, 15),
       3: Colors.yellow,
     };
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(10, 10, 5, 0),
-      child: Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          color: isActive ? Colors.blue : color,
-          borderRadius: BorderRadius.circular(14),
-        ),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 3),
-              child: Text(
-                dayOfWeek,
-                style: TextStyle(color: Theme.of(context).colorScheme.primary),
+    return Consumer<Themeprovider>(
+      builder:
+          (context, value, child) => Padding(
+            padding: const EdgeInsets.fromLTRB(10, 10, 5, 0),
+            child: Container(
+              width: width,
+              height: height,
+              decoration: BoxDecoration(
+                color: isActive ? Colors.blue : color,
+                borderRadius: BorderRadius.circular(14),
               ),
-            ),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(15),
-                    top: Radius.circular(15),
-                  ),
-                  color:
-                      (isActive
-                          ? Colors.blue[700]
-                          : (status != null
-                              ? statusColor[status]
-                              : Theme.of(
-                                context,
-                              ).colorScheme.primaryContainer)),
-                ),
-                width: double.infinity,
-
-                child: Stack(
-                  children: [
-                    Center(
-                      child: Text(
-                        dayOfMonth,
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 3),
+                    child: Text(
+                      dayOfWeek,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.vertical(
+                          bottom: Radius.circular(15),
+                          top: Radius.circular(15),
+                        ),
+                        color:
+                            (isActive
+                                ? Colors.blue[700]
+                                : (status != null
+                                    ? statusColor[status]
+                                    : Theme.of(
+                                      context,
+                                    ).colorScheme.primaryContainer)),
+                      ),
+                      width: double.infinity,
+
+                      child: Stack(
+                        children: [
+                          Center(
+                            child: Text(
+                              dayOfMonth,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
+          ),
     );
   }
 }

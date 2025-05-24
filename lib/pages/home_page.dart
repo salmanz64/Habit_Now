@@ -3,6 +3,7 @@ import 'package:habit_now/components/date_tile.dart';
 import 'package:habit_now/components/habit_tile.dart';
 import 'package:habit_now/database/habit_data.dart';
 import 'package:habit_now/models/habitStatus.dart';
+import 'package:habit_now/themes/themeProvider.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -39,31 +40,36 @@ class _HomePageState extends State<HomePage> {
         children: [
           SizedBox(
             height: height * 0.09,
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                DateTime days = date.add(Duration(days: index));
-                String dayOfWeek = DateFormat('E').format(days);
-                String dayOfMonth = DateFormat('d').format(days);
+            child: Consumer<Themeprovider>(
+              builder: (context, value, child) {
+                Color color = Theme.of(context).colorScheme.tertiary;
+                return ListView.builder(
+                  itemBuilder: (context, index) {
+                    DateTime days = date.add(Duration(days: index));
+                    String dayOfWeek = DateFormat('E').format(days);
+                    String dayOfMonth = DateFormat('d').format(days);
 
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedIndex = index;
-                      selectedDay = dayOfWeek;
-                    });
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = index;
+                          selectedDay = dayOfWeek;
+                        });
+                      },
+                      child: DateTile(
+                        color: color,
+                        dayOfMonth: dayOfMonth,
+                        dayOfWeek: dayOfWeek,
+                        isActive: index == selectedIndex,
+                        width: width * 0.13,
+                        height: height * 0.07,
+                      ),
+                    );
                   },
-                  child: DateTile(
-                    color: Theme.of(context).colorScheme.tertiary,
-                    dayOfMonth: dayOfMonth,
-                    dayOfWeek: dayOfWeek,
-                    isActive: index == selectedIndex,
-                    width: width * 0.13,
-                    height: height * 0.07,
-                  ),
+                  itemCount: 15,
+                  scrollDirection: Axis.horizontal,
                 );
               },
-              itemCount: 15,
-              scrollDirection: Axis.horizontal,
             ),
           ),
           SizedBox(height: height * 0.02),

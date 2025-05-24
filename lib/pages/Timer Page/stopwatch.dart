@@ -23,7 +23,7 @@ class _StopwatchState extends State<MyStopwatch> {
         width: 300,
         height: 300,
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Theme.of(context).colorScheme.surface,
           border: Border.all(color: Colors.blue, width: 15),
           borderRadius: BorderRadius.circular(150),
         ),
