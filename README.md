@@ -38,6 +38,10 @@ A feature-rich Flutter application designed to help users build better habits by
 - **Packages:** 
   - `provider`
   - `fl_chart` *(for charts)*
+  - `timezone`
+  - `flutter_local_notification`
+  - `hive`
+  - `permission_handler`
   - `shared_preferences` *(for persistence)*
 
 ---
