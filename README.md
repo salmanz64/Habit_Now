@@ -1,16 +1,72 @@
-# habit_now
+# 📊 Advanced Habit Tracker App
 
-A new Flutter project.
+A feature-rich Flutter application designed to help users build better habits by tracking progress, setting reminders, and visualizing performance through interactive charts.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🔗 Links
 
-A few resources to get you started if this is your first Flutter project:
+- 🔗 **GitHub Repo:** [Habit Tracker on GitHub](https://github.com/salmanz64/Habit_Now)
+- 🚀 **Hosted Link:** [Habit Tracker Hosted Link](https://habit-now-nu.vercel.app/)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📸 Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🔹 Home Page
+![Home Page](screenshots/home.png)
+
+### 🔹 Habit Details
+![Create Habit](screenshots/habitDetails.png)
+
+### 🔹 Habit Timer
+![Create Habit](screenshots/Timer.png)
+
+### 🔹 Habit Statistics
+![Create Habit](screenshots/Statistics.png)
+
+### 🔹 Habit Calendar
+![Progress](screenshots/Calendar.png)
+
+
+
+## 🛠 Tech Stack
+
+- **Framework:** Flutter
+- **Language:** Dart
+- **State Management:** Provider
+- **Database:** Hive
+- **UI:** Custom widgets, Material Design
+- **Packages:** 
+  - `provider`
+  - `fl_chart` *(for charts)*
+  - `shared_preferences` *(for persistence)*
+
+---
+
+## 🚀 Features
+
+### ✅ Core Functionality
+- Add, edit, and manage custom habits
+- Set daily/weekly reminders with time pickers
+- Track daily progress using interactive checkboxes
+
+### ⏳ Smart Behavior
+- ⏱️ **Delay Enforcement**: If a habit is missed or not marked on time, the next opportunity is delayed. This encourages accountability and reduces "habit skipping."
+- 🔁 Dynamic habit flow based on user performance
+
+### 📊 Analytics
+- Visualize progress and streaks using weekly/monthly charts
+- Identify consistency and improvement areas through data
+
+### 💡 User Experience
+- Clean and minimal UI using Material Design
+- Local or cloud sync for data persistence
+- Dark/light mode 
+
+---
+
+## 📦 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/salmanz64/Habit_Now.git
+cd Habit_Now
